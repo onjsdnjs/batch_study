@@ -175,4 +175,7 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+# custom
+.idea/workspace.xml
+
 # End of https://www.toptal.com/developers/gitignore/api/gradle,intellij,java
