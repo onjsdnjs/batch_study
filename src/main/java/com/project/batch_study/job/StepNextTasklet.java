@@ -1,4 +1,4 @@
-package com.project.batch_study.tasklet;
+package com.project.batch_study.job;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.StepContribution;
