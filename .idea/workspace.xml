@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bf7caaa-eb84-4290-9144-ddf855bf5c5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/SimpleJobConfiguration.java" afterDir="false" />
+    <list default="true" id="9bf7caaa-eb84-4290-9144-ddf855bf5c5e" name="Default Changelist" comment="Batch를 사용하기 위해서 어노테이션추가">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/jdbcCursorItemReaderJobConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/batch_study/BatchStudyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/BatchStudyApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +21,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="springboot_batch@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="springboot_batch@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="springboot_batch@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="springboot_batch: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ExternalProjectsData">
@@ -45,6 +60,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -62,30 +78,96 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.project.batch_study.domain" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project.batch_study.job" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BatchStudyApplication">
+    <configuration name="PayRepositoryTest.insertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.project.batch_study.domain.PayRepositoryTest.insertTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="BatchStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch_study.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.batch_study.BatchStudyApplication" />
+      <option name="PROGRAM_PARAMETERS" value="--job.name=jdbcCursorItemReaderJob requestData=stepJob version=3" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.PayRepositoryTest.insertTest" />
+      <item itemvalue="Spring Boot.BatchStudyApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.PayRepositoryTest.insertTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:springboot_batch@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:springboot_batch@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@30d4ab97" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:springboot_batch@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@6db34cd9" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
       </list>
     </option>
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -97,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593415896302</updated>
-      <workItem from="1593415898598" duration="1849000" />
+      <workItem from="1593415898598" duration="9492000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1593416102321</created>
@@ -113,22 +195,148 @@
       <option name="project" value="LOCAL" />
       <updated>1593417651227</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init">
+      <created>1593422524372</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593422524372</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Batch를 사용하기 위해서 어노테이션 추">
+      <created>1593422553973</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593422553973</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Batch를 사용하기 위해서 어노테이션 추가">
+      <created>1593422603805</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593422603805</updated>
+    </task>
+    <task id="LOCAL-00006" summary="하나의 스탭을 가지는 SimpleJob 생성">
+      <created>1593422666036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593422666036</updated>
+    </task>
+    <task id="LOCAL-00007" summary="spring batch meta data 저장을 위해 mysql 연결하기">
+      <created>1593423859286</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593423859286</updated>
+    </task>
+    <task id="LOCAL-00008" summary="exception을 일으켜 job 실행을 강제로 실패시키는 스탭 추가">
+      <created>1593425939934</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593425939934</updated>
+    </task>
+    <task id="LOCAL-00009" summary="잡 이름을 특정한 경우에는 그 잡만 실행되도록 한다.">
+      <created>1593428102734</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1593428102734</updated>
+    </task>
+    <task id="LOCAL-00010" summary="StepScope를 볌위로 가지는 Tasklet 구현">
+      <created>1593428897193</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1593428897193</updated>
+    </task>
+    <task id="LOCAL-00011" summary="job 패키지로 이동">
+      <created>1593429954103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593429954103</updated>
+    </task>
+    <task id="LOCAL-00012" summary="StepNextTasklet을 사용하는 step을 포함하는 job 생성">
+      <created>1593429982681</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1593429982681</updated>
+    </task>
+    <task id="LOCAL-00013" summary="데이터 베이스에서 데이터를 가져오는 배치 잡에 사용하기 위한 도메인 추가">
+      <created>1593492860912</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1593492860912</updated>
+    </task>
+    <task id="LOCAL-00014" summary="테스트 코드에서 사용할 공통 유틸 추가">
+      <created>1593492881789</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1593492881789</updated>
+    </task>
+    <task id="LOCAL-00015" summary="jpa 설정 추가">
+      <created>1593492904477</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1593492904477</updated>
+    </task>
+    <task id="LOCAL-00016" summary="PayRepositoryTest 클래스 추가">
+      <created>1593492956716</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1593492956716</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
     <MESSAGE value="spring-batch 종속성 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring-batch 종속성 추가" />
+    <MESSAGE value="init" />
+    <MESSAGE value="Batch를 사용하기 위해서 어노테이션추가" />
+    <MESSAGE value="Batch를 사용하기 위해서 어노테이션 추" />
+    <MESSAGE value="Batch를 사용하기 위해서 어노테이션 추가" />
+    <MESSAGE value="하나의 스탭을 가지는 SimpleJob 생성" />
+    <MESSAGE value="spring batch meta data 저장을 위해 mysql 연결하기" />
+    <MESSAGE value="exception을 일으켜 job 실행을 강제로 실패시키는 스탭 추가" />
+    <MESSAGE value="잡 이름을 특정한 경우에는 그 잡만 실행되도록 한다." />
+    <MESSAGE value="StepScope를 볌위로 가지는 Tasklet 구현" />
+    <MESSAGE value="job 패키지로 이동" />
+    <MESSAGE value="StepNextTasklet을 사용하는 step을 포함하는 job 생성" />
+    <MESSAGE value="데이터 베이스에서 데이터를 가져오는 배치 잡에 사용하기 위한 도메인 추가" />
+    <MESSAGE value="테스트 코드에서 사용할 공통 유틸 추가" />
+    <MESSAGE value="jpa 설정 추가" />
+    <MESSAGE value="PayRepositoryTest 클래스 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="PayRepositoryTest 클래스 추가" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="473" y="86" key="CommitChangelistDialog2" timestamp="1593422508666">
+    <state x="1985" y="237" width="1204" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593492704069">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="180" y="245" width="1204" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593429158730" />
+    <state x="1985" y="237" key="#com.intellij.execution.impl.EditConfigurationsDialog/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492704069" />
+    <state x="707" y="282" key="#com.intellij.ide.util.MemberChooser" timestamp="1593428413341">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593422508666" />
+    <state x="707" y="282" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1097@0.23.1792.1097" timestamp="1593428413341" />
+    <state x="406" y="498" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1593428171440">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="406" y="498" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593428171440" />
+    <state x="2299" y="84" key="CommitChangelistDialog2" timestamp="1593492989452">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593429982584" />
+    <state x="2299" y="84" key="CommitChangelistDialog2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492989452" />
     <state x="758" y="473" key="Github.ShareDialog" timestamp="1593415943922">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
@@ -137,9 +345,82 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="660" y="201" key="Github.UntrackedFilesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593415950430" />
-    <state x="496" y="307" key="Vcs.Push.Dialog.v2" timestamp="1593416104679">
+    <state width="1878" height="377" key="GridCell.Tab.0.bottom" timestamp="1593492733087">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159980" />
+    <state width="1878" height="377" key="GridCell.Tab.0.bottom/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733087" />
+    <state width="1878" height="377" key="GridCell.Tab.0.center" timestamp="1593492733086">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159979" />
+    <state width="1878" height="377" key="GridCell.Tab.0.center/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733086" />
+    <state width="1878" height="377" key="GridCell.Tab.0.left" timestamp="1593492733085">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159979" />
+    <state width="1878" height="377" key="GridCell.Tab.0.left/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733085" />
+    <state width="1878" height="377" key="GridCell.Tab.0.right" timestamp="1593492733086">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159980" />
+    <state width="1878" height="377" key="GridCell.Tab.0.right/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733086" />
+    <state width="1878" height="377" key="GridCell.Tab.1.bottom" timestamp="1593492733089">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159981" />
+    <state width="1878" height="377" key="GridCell.Tab.1.bottom/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733089" />
+    <state width="1878" height="377" key="GridCell.Tab.1.center" timestamp="1593492733088">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159980" />
+    <state width="1878" height="377" key="GridCell.Tab.1.center/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733088" />
+    <state width="1878" height="377" key="GridCell.Tab.1.left" timestamp="1593492733087">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159980" />
+    <state width="1878" height="377" key="GridCell.Tab.1.left/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733087" />
+    <state width="1878" height="377" key="GridCell.Tab.1.right" timestamp="1593492733089">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1750" height="463" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593429159980" />
+    <state width="1878" height="377" key="GridCell.Tab.1.right/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492733089" />
+    <state width="1750" height="343" key="GridCell.Tab.2.bottom" timestamp="1593423802621">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593416104679" />
+    <state width="1750" height="343" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593423802621" />
+    <state width="1750" height="343" key="GridCell.Tab.2.center" timestamp="1593423802620">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1750" height="343" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593423802620" />
+    <state width="1750" height="343" key="GridCell.Tab.2.left" timestamp="1593423802620">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1750" height="343" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593423802620" />
+    <state width="1750" height="343" key="GridCell.Tab.2.right" timestamp="1593423802621">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1750" height="343" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593423802621" />
+    <state x="2323" y="297" key="Vcs.Push.Dialog.v2" timestamp="1593493021352">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593431270470" />
+    <state x="2323" y="297" key="Vcs.Push.Dialog.v2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593493021352" />
+    <state x="677" y="356" key="chooseDestDirectoryDialog" timestamp="1593428842607">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="677" y="356" key="chooseDestDirectoryDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593428842607" />
+    <state x="2508" y="274" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1593491673841">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2508" y="274" key="com.intellij.testIntegration.createTest.CreateTestDialog/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593491673841" />
+    <state x="544" y="312" width="1151" height="518" key="find.popup" timestamp="1593423376263">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="544" y="312" width="1151" height="518" key="find.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1593423376263" />
+    <state x="559" y="268" width="670" height="676" key="search.everywhere.popup" timestamp="1593428483604">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="559" y="268" width="670" height="676" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1593428483604" />
   </component>
 </project>
