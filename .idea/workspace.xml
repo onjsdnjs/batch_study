@@ -332,11 +332,11 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="406" y="498" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593428171440" />
-    <state x="2299" y="84" key="CommitChangelistDialog2" timestamp="1593492956582">
+    <state x="2299" y="84" key="CommitChangelistDialog2" timestamp="1593492989452">
       <screen x="1792" y="23" width="1920" height="1057" />
     </state>
     <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593429982584" />
-    <state x="2299" y="84" key="CommitChangelistDialog2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492956582" />
+    <state x="2299" y="84" key="CommitChangelistDialog2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593492989452" />
     <state x="758" y="473" key="Github.ShareDialog" timestamp="1593415943922">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
@@ -401,10 +401,11 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state width="1750" height="343" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593423802621" />
-    <state x="496" y="307" key="Vcs.Push.Dialog.v2" timestamp="1593431270470">
-      <screen x="0" y="23" width="1792" height="1097" />
+    <state x="2323" y="297" key="Vcs.Push.Dialog.v2" timestamp="1593493021352">
+      <screen x="1792" y="23" width="1920" height="1057" />
     </state>
     <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593431270470" />
+    <state x="2323" y="297" key="Vcs.Push.Dialog.v2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593493021352" />
     <state x="677" y="356" key="chooseDestDirectoryDialog" timestamp="1593428842607">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
