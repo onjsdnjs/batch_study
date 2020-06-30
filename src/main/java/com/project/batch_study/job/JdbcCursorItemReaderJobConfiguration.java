@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
-public class jdbcCursorItemReaderJobConfiguration {
+public class JdbcCursorItemReaderJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final DataSource dataSource; //DataSource DI
@@ -45,7 +45,7 @@ public class jdbcCursorItemReaderJobConfiguration {
     @Bean
     public JdbcCursorItemReader<Pay> jdbcCursorItemReader() {
         return new JdbcCursorItemReaderBuilder<Pay>()
-                .fetchSize(CHUNKSIZE)
+                .fetchSize(CHUNKSIZE) // 쿼리는 분할 처리없이 실행, 내부적으로 가져오는 데이터는 FetchSize 만큼..
                 .dataSource(dataSource)
                 .rowMapper(new BeanPropertyRowMapper<>(Pay.class))
                 .sql("SELECT id, amount, tx_name, tx_date_time FROM pay")
