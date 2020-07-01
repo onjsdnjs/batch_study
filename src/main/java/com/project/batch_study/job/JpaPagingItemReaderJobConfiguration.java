@@ -10,6 +10,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,6 +19,7 @@ import javax.persistence.EntityManagerFactory;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
+@ConditionalOnProperty(name = "job.name", havingValue = JpaPagingItemReaderJobConfiguration.JOB_NAME)
 public class JpaPagingItemReaderJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
@@ -25,9 +27,11 @@ public class JpaPagingItemReaderJobConfiguration {
 
     private static final int CHUNKSIZE = 10;
 
+    public static final String JOB_NAME = "jpaPagingItemReaderJob";
+
     @Bean
     public Job jpaPagingItemReaderJob() {
-        return jobBuilderFactory.get("jpaPagingItemReaderJob")
+        return jobBuilderFactory.get(JOB_NAME)
                 .start(jpaPagingItemReaderStep())
                 .build();
     }
