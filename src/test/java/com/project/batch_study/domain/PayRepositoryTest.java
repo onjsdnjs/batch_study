@@ -29,7 +29,7 @@ class PayRepositoryTest {
                 .txName(TestUtil.getRandomString(10))
                 .DateTime(LocalDateTime.now())
                 .amount(TestUtil.getRandomLong(1000, 100000))
-                .successStatus(false)
+                .successStatus(true)
                 .build();
 
         payRepository.save(newData);
@@ -43,16 +43,12 @@ class PayRepositoryTest {
         List<Pay> pays = new ArrayList<>();
 
         for (int i = 0; i < 100; ++i) {
-            boolean successStatus = true;
-            if (i % 3 == 0) {
-                successStatus = false;
-            }
 
             Pay newData = Pay.builder()
                     .txName(TestUtil.getRandomString(10))
                     .DateTime(LocalDateTime.now())
                     .amount(TestUtil.getRandomLong(1000, 100000))
-                    .successStatus(successStatus)
+                    .successStatus(true)
                     .build();
 
             pays.add(newData);
