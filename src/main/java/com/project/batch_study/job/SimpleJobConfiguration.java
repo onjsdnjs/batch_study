@@ -9,19 +9,23 @@ import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @RequiredArgsConstructor
 @Configuration
 @Slf4j
+@ConditionalOnProperty(name = "job.name", havingValue = SimpleJobConfiguration.JOB_NAME)
 public class SimpleJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
+    public static final String JOB_NAME = "simpleJob";
+
     @Bean
     public Job simpleJob() {
-        return jobBuilderFactory.get("simpleJob")
+        return jobBuilderFactory.get(JOB_NAME)
                 .start(simpleStepWithArgument(null))
                 .next(exceptionStep(null))
                 .next(simpleStep1())

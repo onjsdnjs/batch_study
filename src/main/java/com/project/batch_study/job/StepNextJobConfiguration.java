@@ -8,21 +8,25 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.repeat.RepeatStatus;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @RequiredArgsConstructor
 @Configuration
 @Slf4j
+@ConditionalOnProperty(name = "job.name", havingValue = StepNextJobConfiguration.JOB_NAME)
 public class StepNextJobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final StepNextTasklet stepNextTasklet;
 
+    public static final String JOB_NAME = "stepNextJob";
+
     @Bean
     public Job stepNextJob() {
-        return jobBuilderFactory.get("stepNextJob")
+        return jobBuilderFactory.get(JOB_NAME)
                 .start(step1())
                 .next(step2())
                 .next(step3())

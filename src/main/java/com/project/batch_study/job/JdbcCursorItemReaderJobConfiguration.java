@@ -10,6 +10,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
 import org.springframework.batch.item.database.builder.JdbcCursorItemReaderBuilder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -19,6 +20,7 @@ import javax.sql.DataSource;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
+@ConditionalOnProperty(name = "job.name", havingValue = JdbcCursorItemReaderJobConfiguration.JOB_NAME)
 public class JdbcCursorItemReaderJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
@@ -26,9 +28,11 @@ public class JdbcCursorItemReaderJobConfiguration {
 
     private static final int CHUNKSIZE = 10;
 
+    public static final String JOB_NAME = "jdbcCursorItemReaderJob";
+
     @Bean
     public Job jdbcCursorItemReaderJob(){
-        return jobBuilderFactory.get("jdbcCursorItemReaderJob")
+        return jobBuilderFactory.get(JOB_NAME)
                 .start(jdbcCursorItemReaderStep())
                 .build();
     }

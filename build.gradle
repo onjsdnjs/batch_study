@@ -28,6 +28,9 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	compile('org.springframework.boot:spring-boot-starter-batch')
+	// https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-test
+	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: '4.2.4.RELEASE'
+
 }
 
 test {
