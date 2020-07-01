@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bf7caaa-eb84-4290-9144-ddf855bf5c5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/PayCursorJobConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/PayPagingFailJobConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/PayPagingJobConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/project/batch_study/job/PayCursorJobConfigurationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/project/batch_study/job/PayPagingFailJobConfigurationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/project/batch_study/job/PayPagingJobConfigurationTest.java" afterDir="false" />
+    <list default="true" id="9bf7caaa-eb84-4290-9144-ddf855bf5c5e" name="Default Changelist" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/domain/PayDuplicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/JpaItemWriterJobConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/project/batch_study/domain/PayRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/project/batch_study/domain/PayRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +71,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -116,10 +110,11 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project.batch_study.domain" />
       <recent name="com.project.batch_study.job" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PayPagingFailJobConfigurationTest.test1">
+  <component name="RunManager" selected="Spring Boot.BatchStudyApplication">
     <configuration name="PayCursorJobConfigurationTest.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -223,7 +218,7 @@
     <configuration name="BatchStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch_study.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.batch_study.BatchStudyApplication" />
-      <option name="PROGRAM_PARAMETERS" value="--job.name=payPagingFailJob requestData=stepJob version=5" />
+      <option name="PROGRAM_PARAMETERS" value="--job.name=jpaItemWriterJob requestData=stepJob version=6" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,9 +228,9 @@
       <item itemvalue="Gradle.PayRepositoryTest.insertTest" />
       <item itemvalue="Gradle.PayRepositoryTest.insertData" />
       <item itemvalue="Gradle.PayPagingFailJobConfigurationTest.test1" />
-      <item itemvalue="Spring Boot.BatchStudyApplication" />
       <item itemvalue="Gradle.PayCursorJobConfigurationTest.test1" />
       <item itemvalue="Gradle.PayPagingJobConfigurationTest.test1" />
+      <item itemvalue="Spring Boot.BatchStudyApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -260,6 +255,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:springboot_batch@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@64c92c08" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:springboot_batch@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="com.intellij.database.console.session.MessageBusSession@30d4ab97" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
@@ -279,7 +279,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593415896302</updated>
-      <workItem from="1593415898598" duration="24824000" />
+      <workItem from="1593415898598" duration="26783000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1593416102321</created>
@@ -463,21 +463,62 @@
       <option name="project" value="LOCAL" />
       <updated>1593578385857</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="@SpringBatchTest 를 사용하기 위해서 spring-batch-test 라이브러리를 추가한다.">
+      <created>1593595732015</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595732015</updated>
+    </task>
+    <task id="LOCAL-00028" summary="JpaPagingItemReaderBuilder와 순차적인 페이징을 이용해 status가 false인 데이터를 true로 변경하는 잡 추가">
+      <created>1593595774186</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595774186</updated>
+    </task>
+    <task id="LOCAL-00029" summary="페이징 처리 때문에 검색되는 데이터가 스킵 돼 실패하는 테스트 코드 추가">
+      <created>1593595819140</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595819140</updated>
+    </task>
+    <task id="LOCAL-00030" summary="pay의 successStatus 컬럼은 디폴트 값을 true로 설정한다.">
+      <created>1593595870783</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595870783</updated>
+    </task>
+    <task id="LOCAL-00031" summary="페이징 대신 커서를 이용하여 successStatus 중 false를 true로 변경하는 잡 추가/테스트">
+      <created>1593595940925</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595940925</updated>
+    </task>
+    <task id="LOCAL-00032" summary="jpa페이징을 사용하나 limit의 인덱스를 0으로 설정해 데이터를 뛰어넘지 못하게 한다.">
+      <created>1593595995542</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595995542</updated>
+    </task>
+    <task id="LOCAL-00033" summary="JdbcBatchItemWriter를 이용해 pay 테이블 내 데이터를 pay_duplicate 테이블로 복제하기">
+      <created>1593603848653</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1593603848653</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="spring-batch 종속성 추가" />
-    <MESSAGE value="Batch를 사용하기 위해서 어노테이션추가" />
-    <MESSAGE value="Batch를 사용하기 위해서 어노테이션 추" />
-    <MESSAGE value="Batch를 사용하기 위해서 어노테이션 추가" />
-    <MESSAGE value="하나의 스탭을 가지는 SimpleJob 생성" />
-    <MESSAGE value="spring batch meta data 저장을 위해 mysql 연결하기" />
-    <MESSAGE value="exception을 일으켜 job 실행을 강제로 실패시키는 스탭 추가" />
-    <MESSAGE value="잡 이름을 특정한 경우에는 그 잡만 실행되도록 한다." />
     <MESSAGE value="StepScope를 볌위로 가지는 Tasklet 구현" />
     <MESSAGE value="job 패키지로 이동" />
     <MESSAGE value="StepNextTasklet을 사용하는 step을 포함하는 job 생성" />
@@ -486,7 +527,6 @@
     <MESSAGE value="jpa 설정 추가" />
     <MESSAGE value="PayRepositoryTest 클래스 추가" />
     <MESSAGE value="Cursor를 이용해 데이터베이스에서 데이터 가져오기 -JdbcCursorItemReader 구현" />
-    <MESSAGE value="init" />
     <MESSAGE value="클래스 이름 변경, 주석 추가" />
     <MESSAGE value="페이징을 사용해 데이터를 패치해오는 잡 구성 (JdbcPagingItemReaderBuilder)" />
     <MESSAGE value="쿼리 확인 위해 배치 로깅 수준 변경 (DEBUG)" />
@@ -495,13 +535,22 @@
     <MESSAGE value="boolean 타입의 successStatus 컬럼 추가" />
     <MESSAGE value="Pay Entity insert 시에 새로 추가된 컬럼인 successStatus를 포함하도록 변경" />
     <MESSAGE value="ConditionalOnProperty 어노테이션 추가 (for test)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ConditionalOnProperty 어노테이션 추가 (for test)" />
+    <MESSAGE value="@SpringBatchTest 를 사용하기 위해서 spring-batch-test 라이브러리를 추가한다." />
+    <MESSAGE value="JpaPagingItemReaderBuilder와 순차적인 페이징을 이용해 status가 false인 데이터를 true로 변경하는 잡 추가" />
+    <MESSAGE value="페이징 처리 때문에 검색되는 데이터가 스킵 돼 실패하는 테스트 코드 추가" />
+    <MESSAGE value="pay의 successStatus 컬럼은 디폴트 값을 true로 설정한다." />
+    <MESSAGE value="페이징 대신 커서를 이용하여 successStatus 중 false를 true로 변경하는 잡 추가/테스트" />
+    <MESSAGE value="jpa페이징을 사용하나 limit의 인덱스를 0으로 설정에 데이터를 뛰어넘지 못하게 한다." />
+    <MESSAGE value="jpa페이징을 사용하나 limit의 인덱스를 0으로 설정해 데이터를 뛰어넘지 못하게 한다." />
+    <MESSAGE value="init" />
+    <MESSAGE value="JdbcBatchItemWriter를 이용해 pay 테이블 내 데이터를 pay_duplicate 테이블로 복제하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="JdbcBatchItemWriter를 이용해 pay 테이블 내 데이터를 pay_duplicate 테이블로 복제하기" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="241" y="332" width="1132" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593577140144">
+    <state x="241" y="332" width="1132" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593604243033">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="241" y="332" width="1204" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593577140144" />
+    <state x="241" y="332" width="1204" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593604243033" />
     <state x="1985" y="237" width="1132" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593499591917" />
     <state x="707" y="282" key="#com.intellij.ide.util.MemberChooser" timestamp="1593428413341">
       <screen x="0" y="23" width="1792" height="1097" />
@@ -515,11 +564,15 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="657" y="196" key="#xdebugger.evaluate/0.23.1792.1097@0.23.1792.1097" timestamp="1593578975746" />
-    <state x="473" y="86" key="CommitChangelistDialog2" timestamp="1593595774048">
+    <state x="473" y="86" key="CommitChangelistDialog2" timestamp="1593604584948">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593595774048" />
+    <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593604584948" />
     <state x="2299" y="84" key="CommitChangelistDialog2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593503502321" />
+    <state x="233" y="121" key="DiffContextDialog" timestamp="1593595832997">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="233" y="121" key="DiffContextDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593595832997" />
     <state x="758" y="473" key="Github.ShareDialog" timestamp="1593415943922">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
@@ -528,66 +581,66 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="660" y="201" key="Github.UntrackedFilesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593415950430" />
-    <state width="1750" height="406" key="GridCell.Tab.0.bottom" timestamp="1593595659892">
+    <state width="1204" height="275" key="GridCell.Tab.0.bottom" timestamp="1593604347275">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="406" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593595659892" />
+    <state width="1204" height="275" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347275" />
     <state width="1878" height="371" key="GridCell.Tab.0.bottom/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="406" key="GridCell.Tab.0.center" timestamp="1593595659892">
+    <state width="1204" height="275" key="GridCell.Tab.0.center" timestamp="1593604347274">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="406" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593595659892" />
+    <state width="1204" height="275" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347274" />
     <state width="1878" height="371" key="GridCell.Tab.0.center/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308711" />
-    <state width="1750" height="406" key="GridCell.Tab.0.left" timestamp="1593595659891">
+    <state width="1204" height="275" key="GridCell.Tab.0.left" timestamp="1593604347274">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="406" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593595659891" />
+    <state width="1204" height="275" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347274" />
     <state width="1878" height="371" key="GridCell.Tab.0.left/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308711" />
-    <state width="1750" height="406" key="GridCell.Tab.0.right" timestamp="1593595659892">
+    <state width="1204" height="275" key="GridCell.Tab.0.right" timestamp="1593604347274">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="406" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593595659892" />
+    <state width="1204" height="275" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347274" />
     <state width="1878" height="371" key="GridCell.Tab.0.right/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308711" />
-    <state width="1750" height="250" key="GridCell.Tab.1.bottom" timestamp="1593579132661">
+    <state width="1750" height="339" key="GridCell.Tab.1.bottom" timestamp="1593604347194">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="250" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593579132661" />
+    <state width="1750" height="339" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347194" />
     <state width="1878" height="371" key="GridCell.Tab.1.bottom/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308713" />
-    <state width="1750" height="250" key="GridCell.Tab.1.center" timestamp="1593579132660">
+    <state width="1750" height="339" key="GridCell.Tab.1.center" timestamp="1593604347194">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="250" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593579132660" />
+    <state width="1750" height="339" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347194" />
     <state width="1878" height="371" key="GridCell.Tab.1.center/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="250" key="GridCell.Tab.1.left" timestamp="1593579132660">
+    <state width="1750" height="339" key="GridCell.Tab.1.left" timestamp="1593604347193">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="250" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593579132660" />
+    <state width="1750" height="339" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347193" />
     <state width="1878" height="371" key="GridCell.Tab.1.left/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="250" key="GridCell.Tab.1.right" timestamp="1593579132661">
+    <state width="1750" height="339" key="GridCell.Tab.1.right" timestamp="1593604347194">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="250" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593579132661" />
+    <state width="1750" height="339" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593604347194" />
     <state width="1878" height="371" key="GridCell.Tab.1.right/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="343" key="GridCell.Tab.2.bottom" timestamp="1593578941609">
+    <state width="1750" height="524" key="GridCell.Tab.2.bottom" timestamp="1593603763087">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="343" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593578941609" />
-    <state width="1750" height="343" key="GridCell.Tab.2.center" timestamp="1593578941609">
+    <state width="1750" height="524" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
+    <state width="1750" height="524" key="GridCell.Tab.2.center" timestamp="1593603763087">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="343" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593578941609" />
-    <state width="1750" height="343" key="GridCell.Tab.2.left" timestamp="1593578941609">
+    <state width="1750" height="524" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
+    <state width="1750" height="524" key="GridCell.Tab.2.left" timestamp="1593603763087">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="343" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593578941609" />
-    <state width="1750" height="343" key="GridCell.Tab.2.right" timestamp="1593578941609">
+    <state width="1750" height="524" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
+    <state width="1750" height="524" key="GridCell.Tab.2.right" timestamp="1593603763087">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="343" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593578941609" />
-    <state x="2323" y="297" key="Vcs.Push.Dialog.v2" timestamp="1593503505542">
-      <screen x="1792" y="23" width="1920" height="1057" />
+    <state width="1750" height="524" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
+    <state x="496" y="307" key="Vcs.Push.Dialog.v2" timestamp="1593596007678">
+      <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593431270470" />
+    <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593596007678" />
     <state x="2323" y="297" key="Vcs.Push.Dialog.v2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593503505542" />
     <state x="677" y="356" key="chooseDestDirectoryDialog" timestamp="1593428842607">
       <screen x="0" y="23" width="1792" height="1097" />
