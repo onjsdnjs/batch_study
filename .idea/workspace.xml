@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bf7caaa-eb84-4290-9144-ddf855bf5c5e" name="Default Changelist" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/domain/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/domain/TeacherRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/CustomItemWriterJobConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/ProcessorConvertJobConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/project/batch_study/domain/TeacherRepositoryTest.java" afterDir="false" />
+    <list default="true" id="9bf7caaa-eb84-4290-9144-ddf855bf5c5e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/batch_study/job/TransactionWriterJobConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/project/batch_study/utils/TestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/project/batch_study/utils/TestUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,20 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="springboot_batch: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="springboot_batch@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="springboot_batch: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="teacher: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="springboot_batch@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="springboot_batch: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="teacher_students: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -68,8 +77,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -132,7 +141,7 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PayPagingFailJobConfigurationTest.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PayPagingFailJobConfigurationTest.test1" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,26 +181,6 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PayRepositoryTest.insertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.project.batch_study.domain.PayRepositoryTest.insertTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="TeacherRepositoryTest.insertData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -212,30 +201,49 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TeacherRepositoryTest.insertTeacherWithStudent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.project.batch_study.domain.TeacherRepositoryTest.insertTeacherWithStudent&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="BatchStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch_study.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.batch_study.BatchStudyApplication" />
-      <option name="PROGRAM_PARAMETERS" value="--job.name=ProcessorConvertBatch requestData=stepJob version=7" />
+      <option name="PROGRAM_PARAMETERS" value="--job.name=transactionWriterBatch requestData=stepJob version=9" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.PayRepositoryTest.insertTest" />
       <item itemvalue="Gradle.PayPagingFailJobConfigurationTest.test1" />
       <item itemvalue="Gradle.PayCursorJobConfigurationTest.test1" />
       <item itemvalue="Gradle.PayPagingJobConfigurationTest.test1" />
       <item itemvalue="Gradle.TeacherRepositoryTest.insertData" />
+      <item itemvalue="Gradle.TeacherRepositoryTest.insertTeacherWithStudent" />
       <item itemvalue="Spring Boot.BatchStudyApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TeacherRepositoryTest.insertTeacherWithStudent" />
         <item itemvalue="Gradle.TeacherRepositoryTest.insertData" />
-        <item itemvalue="Gradle.PayPagingFailJobConfigurationTest.test1" />
         <item itemvalue="Gradle.PayCursorJobConfigurationTest.test1" />
         <item itemvalue="Gradle.PayPagingJobConfigurationTest.test1" />
-        <item itemvalue="Gradle.PayRepositoryTest.insertTest" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +279,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593415896302</updated>
-      <workItem from="1593415898598" duration="28886000" />
+      <workItem from="1593415898598" duration="34149000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1593416102321</created>
@@ -518,22 +526,76 @@
       <option name="project" value="LOCAL" />
       <updated>1593604616056</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="새로운 도메인 Teacher 추가">
+      <created>1593608354970</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1593608354970</updated>
+    </task>
+    <task id="LOCAL-00037" summary="랜덤 정수값 범위 오류 수정">
+      <created>1593608385550</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1593608385550</updated>
+    </task>
+    <task id="LOCAL-00038" summary="teacher 테이블에 데이터 주입하는 코드 추가">
+      <created>1593608403518</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1593608403518</updated>
+    </task>
+    <task id="LOCAL-00039" summary="ItemWriter를 이용해 사용자지정 writer 사용하기">
+      <created>1593608426156</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1593608426156</updated>
+    </task>
+    <task id="LOCAL-00040" summary="ItemProcessor와 ItemWriter를 이용해 사용자 지정 processor 사용하기">
+      <created>1593608454677</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1593608454677</updated>
+    </task>
+    <task id="LOCAL-00041" summary="processor에서 null을 반환함으로써 필터효과주기">
+      <created>1593608654665</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1593608654665</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Lazy 로딩을 테스트하기 위해 Teacher와 1:n의 관계를 가지는 Student entity추가">
+      <created>1593688811913</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1593688811913</updated>
+    </task>
+    <task id="LOCAL-00043" summary="서로 관계가 있는 teacher와 student를 데이터베이스에 넣기위한 코드 추가">
+      <created>1593688836607</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1593688836607</updated>
+    </task>
+    <task id="LOCAL-00044" summary="processor가 하나의 트랜잭션에 포함되어 있으므로 Lazy 로딩에 성공하는 것을 확인한다.">
+      <created>1593688872188</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1593688872188</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="StepNextTasklet을 사용하는 step을 포함하는 job 생성" />
-    <MESSAGE value="데이터 베이스에서 데이터를 가져오는 배치 잡에 사용하기 위한 도메인 추가" />
-    <MESSAGE value="테스트 코드에서 사용할 공통 유틸 추가" />
-    <MESSAGE value="jpa 설정 추가" />
-    <MESSAGE value="PayRepositoryTest 클래스 추가" />
-    <MESSAGE value="Cursor를 이용해 데이터베이스에서 데이터 가져오기 -JdbcCursorItemReader 구현" />
-    <MESSAGE value="클래스 이름 변경, 주석 추가" />
-    <MESSAGE value="페이징을 사용해 데이터를 패치해오는 잡 구성 (JdbcPagingItemReaderBuilder)" />
-    <MESSAGE value="쿼리 확인 위해 배치 로깅 수준 변경 (DEBUG)" />
     <MESSAGE value="임의 데이터 추가용 코드 추가" />
     <MESSAGE value="특정 조건을 만족하는 데이터를 페이징해 가져오는 잡 구성 (JpaPagingItemReaderBuilder)" />
     <MESSAGE value="boolean 타입의 successStatus 컬럼 추가" />
@@ -550,13 +612,22 @@
     <MESSAGE value="JdbcBatchItemWriter를 이용해 pay 테이블 내 데이터를 pay_duplicate 테이블로 복제하기" />
     <MESSAGE value="JpaItemWriter를 사용해 데이터 복제해 저장하기" />
     <MESSAGE value="JpaItemWriter를 사용할 때 쓸 복제용 Entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="JpaItemWriter를 사용할 때 쓸 복제용 Entity" />
+    <MESSAGE value="새로운 도메인 Teacher 추가" />
+    <MESSAGE value="랜덤 정수값 범위 오류 수정" />
+    <MESSAGE value="teacher 테이블에 데이터 주입하는 코드 추가" />
+    <MESSAGE value="ItemWriter를 이용해 사용자지정 writer 사용하기" />
+    <MESSAGE value="ItemProcessor와 ItemWriter를 이용해 사용자 지정 processor 사용하기" />
+    <MESSAGE value="processor에서 null을 반환함으로써 필터효과주기" />
+    <MESSAGE value="Lazy 로딩을 테스트하기 위해 Teacher와 1:n의 관계를 가지는 Student entity추가" />
+    <MESSAGE value="서로 관계가 있는 teacher와 student를 데이터베이스에 넣기위한 코드 추가" />
+    <MESSAGE value="processor가 하나의 트랜잭션에 포함되어 있으므로 Lazy 로딩에 성공하는 것을 확인한다." />
+    <option name="LAST_COMMIT_MESSAGE" value="processor가 하나의 트랜잭션에 포함되어 있으므로 Lazy 로딩에 성공하는 것을 확인한다." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="241" y="332" width="1132" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593608285435">
+    <state x="241" y="332" width="1132" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593689499667">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="241" y="332" width="1204" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593608285435" />
+    <state x="241" y="332" width="1204" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593689499667" />
     <state x="1985" y="237" width="1132" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593499591917" />
     <state x="707" y="282" key="#com.intellij.ide.util.MemberChooser" timestamp="1593428413341">
       <screen x="0" y="23" width="1792" height="1097" />
@@ -570,10 +641,10 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="657" y="196" key="#xdebugger.evaluate/0.23.1792.1097@0.23.1792.1097" timestamp="1593578975746" />
-    <state x="473" y="86" key="CommitChangelistDialog2" timestamp="1593608426013">
+    <state x="473" y="86" key="CommitChangelistDialog2" timestamp="1593688872065">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593608426013" />
+    <state x="473" y="86" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1593688872065" />
     <state x="2299" y="84" key="CommitChangelistDialog2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593503502321" />
     <state x="233" y="121" key="DiffContextDialog" timestamp="1593595832997">
       <screen x="0" y="23" width="1792" height="1097" />
@@ -587,66 +658,66 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="660" y="201" key="Github.UntrackedFilesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1593415950430" />
-    <state width="1750" height="298" key="GridCell.Tab.0.bottom" timestamp="1593608287419">
+    <state width="1750" height="62" key="GridCell.Tab.0.bottom" timestamp="1593689501573">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593608287419" />
+    <state width="1750" height="62" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501573" />
     <state width="1878" height="371" key="GridCell.Tab.0.bottom/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="298" key="GridCell.Tab.0.center" timestamp="1593608287418">
+    <state width="1750" height="62" key="GridCell.Tab.0.center" timestamp="1593689501572">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593608287418" />
+    <state width="1750" height="62" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501572" />
     <state width="1878" height="371" key="GridCell.Tab.0.center/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308711" />
-    <state width="1750" height="298" key="GridCell.Tab.0.left" timestamp="1593608287418">
+    <state width="1750" height="62" key="GridCell.Tab.0.left" timestamp="1593689501572">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593608287418" />
+    <state width="1750" height="62" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501572" />
     <state width="1878" height="371" key="GridCell.Tab.0.left/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308711" />
-    <state width="1750" height="298" key="GridCell.Tab.0.right" timestamp="1593608287418">
+    <state width="1750" height="62" key="GridCell.Tab.0.right" timestamp="1593689501573">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593608287418" />
+    <state width="1750" height="62" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501573" />
     <state width="1878" height="371" key="GridCell.Tab.0.right/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308711" />
-    <state width="1750" height="298" key="GridCell.Tab.1.bottom" timestamp="1593607238712">
+    <state width="1750" height="62" key="GridCell.Tab.1.bottom" timestamp="1593689501574">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593607238712" />
+    <state width="1750" height="62" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501574" />
     <state width="1878" height="371" key="GridCell.Tab.1.bottom/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308713" />
-    <state width="1750" height="298" key="GridCell.Tab.1.center" timestamp="1593607238712">
+    <state width="1750" height="62" key="GridCell.Tab.1.center" timestamp="1593689501573">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593607238712" />
+    <state width="1750" height="62" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501573" />
     <state width="1878" height="371" key="GridCell.Tab.1.center/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="298" key="GridCell.Tab.1.left" timestamp="1593607238712">
+    <state width="1750" height="62" key="GridCell.Tab.1.left" timestamp="1593689501573">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593607238712" />
+    <state width="1750" height="62" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501573" />
     <state width="1878" height="371" key="GridCell.Tab.1.left/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="298" key="GridCell.Tab.1.right" timestamp="1593607238712">
+    <state width="1750" height="62" key="GridCell.Tab.1.right" timestamp="1593689501573">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="298" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593607238712" />
+    <state width="1750" height="62" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593689501573" />
     <state width="1878" height="371" key="GridCell.Tab.1.right/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593501308712" />
-    <state width="1750" height="524" key="GridCell.Tab.2.bottom" timestamp="1593603763087">
+    <state width="1750" height="524" key="GridCell.Tab.2.bottom" timestamp="1593687116055">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="524" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
-    <state width="1750" height="524" key="GridCell.Tab.2.center" timestamp="1593603763087">
+    <state width="1750" height="524" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1593687116055" />
+    <state width="1750" height="524" key="GridCell.Tab.2.center" timestamp="1593687116055">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="524" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
-    <state width="1750" height="524" key="GridCell.Tab.2.left" timestamp="1593603763087">
+    <state width="1750" height="524" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1593687116055" />
+    <state width="1750" height="524" key="GridCell.Tab.2.left" timestamp="1593687116055">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="524" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
-    <state width="1750" height="524" key="GridCell.Tab.2.right" timestamp="1593603763087">
+    <state width="1750" height="524" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1593687116055" />
+    <state width="1750" height="524" key="GridCell.Tab.2.right" timestamp="1593687116055">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1750" height="524" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593603763087" />
-    <state x="496" y="307" key="Vcs.Push.Dialog.v2" timestamp="1593596007678">
+    <state width="1750" height="524" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1593687116055" />
+    <state x="496" y="307" key="Vcs.Push.Dialog.v2" timestamp="1593608870227">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593596007678" />
+    <state x="496" y="307" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1593608870227" />
     <state x="2323" y="297" key="Vcs.Push.Dialog.v2/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593503505542" />
     <state x="677" y="356" key="chooseDestDirectoryDialog" timestamp="1593428842607">
       <screen x="0" y="23" width="1792" height="1097" />
@@ -674,5 +745,16 @@
     </state>
     <state x="559" y="268" width="670" height="676" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1593606999266" />
     <state x="2391" y="259" width="718" height="652" key="search.everywhere.popup/3712.-9.1920.1057/0.23.1792.1097/1792.23.1920.1057@1792.23.1920.1057" timestamp="1593503122616" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/project/batch_study/domain/TeacherRepositoryTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
